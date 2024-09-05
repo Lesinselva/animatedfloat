@@ -7,6 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 class CustomAnimatedFloatingActionButton extends StatefulWidget {
   final String svgPath;
+  final String? package;
   final String text;
   final VoidCallback onTap;
   final ScrollController scrollController;
@@ -17,6 +18,7 @@ class CustomAnimatedFloatingActionButton extends StatefulWidget {
     required this.text,
     required this.onTap,
     required this.scrollController,
+    this.package,
   });
 
   @override
@@ -81,6 +83,7 @@ class _CustomAnimatedFloatingActionButtonState
                 padding: const EdgeInsets.symmetric(horizontal: 4),
                 child: SvgPicture.asset(
                   widget.svgPath,
+                  package: widget.package,
                   width: 24,
                   height: 24,
                   color: Colors.black,
